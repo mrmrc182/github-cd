@@ -1,0 +1,17 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.11
+        with:
+          heroku_api_key: ${{secrets.05899b48-88af-46b8-b70c-8860f5ee685a}}
+          heroku_app_name: "continuous-deployment-test"
+          heroku_email: "carlson.matt.r@gmail.com"
